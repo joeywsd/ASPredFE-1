@@ -49,7 +49,7 @@ python manage.py runserver --settings=labsite.settings_local
 
 5. Run wrapper:
 ```bash
-To run wrapper, uv run aspredwrapper.py
+uv run aspredwrapper.py
 ```
 6. To send email notifications:
 ```bash
