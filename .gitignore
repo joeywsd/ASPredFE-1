@@ -57,6 +57,9 @@ coverage.xml
 .hypothesis/
 .pytest_cache/
 cover/
+test_email.html
+forASPRED.csv
+forASPRED__thresh0.5_predictions.csv
 
 # Translations
 *.mo
