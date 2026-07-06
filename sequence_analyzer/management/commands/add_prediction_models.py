@@ -3,6 +3,8 @@ from django.core.management.base import BaseCommand
 
 # App-specific import: This pulls in your custom database Model so you can read/write data.
 from sequence_analyzer.models import PredictionModel
+import json
+from pathlib import Path
 
 # Django looks specifically for a class named 'Command' that inherits from 'BaseCommand'.
 # The file structure matters here: this file must be inside an app under `management/commands/your_filename.py`.
@@ -15,28 +17,14 @@ class Command(BaseCommand):
     def handle(self, *args, **options):
         
         # A standard Python list of dictionaries containing the initial data you want to seed.
-        models_data = [
-            {
-                "name": "default",
-                "description": "Current ASPRED model",
-                "model_path": "default"
-            },
-            {
-                "name": "modela",
-                "description": "ASPRED Variant A",
-                "model_path": "default2"
-            },
-            {
-                "name": "modelb",
-                "description": "ASPRED Variant B",
-                "model_path": "default"
-            },
-            {
-                "name": "modelc",
-                "description": "ASPRED Variant C",
-                "model_path": "default"
-            },
-        ]
+        file_path = (
+            Path(__file__).resolve().parents[3]
+            / "aspredINF"
+            / "protein_models.json"
+        )
+
+        with file_path.open("r", encoding="utf-8") as f:
+            models_data = json.load(f)
 
         # Loop through each model dictionary to process them one by one.
         for model_data in models_data:

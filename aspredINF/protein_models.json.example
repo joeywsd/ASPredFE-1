@@ -1,0 +1,12 @@
+[
+    {
+        "name": "default",
+        "description": "Current ASPRED model",
+        "model_path": "default"
+    },
+    {
+        "name": "modela",
+        "description": "ASPRED Variant A",
+        "model_path": "default2"
+    }
+]
