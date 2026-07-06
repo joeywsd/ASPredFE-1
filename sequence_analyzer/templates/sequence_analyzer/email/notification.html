@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <style>
+        table { 
+            width: 100%; 
+            max-width: 650px; /* Prevents the table from stretching too wide */
+            border-collapse: collapse; 
+        }
+        th, td { 
+            border: 1px solid #dddddd; 
+            padding: 8px; 
+            text-align: left; 
+        }
+        th { 
+            background-color: #f2f2f2; 
+        }
+    </style>
+</head>
+<body>
+    <h2>Your Sequence Submission Summary</h2>
+    <p>Here are your latest submission results:</p>
+    
+    <table>
+        <tr>
+            <th>Submission Name</th>
+            <th>Model Used</th>
+            <th>Result Value</th>
+        </tr>
+        {% for sub in submissions %}
+        <tr>
+            <td>{{ sub.title }}</td>
+            <td>{{ sub.prediction_model }}</td>
+            <td>{{ sub.rounded_result }}</td>
+        </tr>
+        {% endfor %}
+    </table>
+</body>
+</html>

@@ -24,7 +24,7 @@ class Command(BaseCommand):
             {
                 "name": "modela",
                 "description": "ASPRED Variant A",
-                "model_path": "default"
+                "model_path": "default2"
             },
             {
                 "name": "modelb",

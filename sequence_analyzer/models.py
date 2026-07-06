@@ -75,6 +75,7 @@ class SequenceSubmission(models.Model):
     submit_date = models.DateTimeField(auto_now_add=True)
     result = models.FloatField(default=0)
     result_date = models.DateTimeField(null=True, blank=True)
+    email_sent = models.BooleanField(default=False)
 
     class Meta:
         ordering = ['-submit_date']
