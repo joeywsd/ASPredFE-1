@@ -16,6 +16,9 @@ class Command(BaseCommand):
     # *args and **options capture any extra flags or arguments passed via the terminal.
     def handle(self, *args, **options):
         
+        # clear up model data
+        PredictionModel.objects.all().delete()
+
         # A standard Python list of dictionaries containing the initial data you want to seed.
         file_path = (
             Path(__file__).resolve().parents[3]
