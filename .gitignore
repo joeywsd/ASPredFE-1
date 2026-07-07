@@ -1,5 +1,7 @@
+#models
 adapter_config.json
 adapter_model.safetensors
+protein_models.json
 
 .DS_Store
 .env.prod

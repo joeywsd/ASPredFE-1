@@ -39,7 +39,8 @@ curl -LsSf https://astral.sh/uv/install.sh | sh
 ```bash
 python manage.py makemigrations --settings=labsite.settings_local
 python manage.py migrate --settings=labsite.settings_local
-python manage.py add_prediction_models --settings=labsite.settings_local
+# Configure protein_models.json.example with prediction_models
+python manage.py update_prediction_models --settings=labsite.settings_local
 ```
 
 4. Run development server:
